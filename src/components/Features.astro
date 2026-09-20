@@ -1,0 +1,26 @@
+---
+const features = [
+  { title: "Targeted Content", body: "We dive deep into your audience's needs and your industry to craft content that resonates, drives engagement, and adds real value to your website." },
+  { title: "CopyScape Passed", body: "Every piece of content we deliver is rigorously checked for originality with CopyScape, ensuring your site is both unique and authoritative." },
+  { title: "Specialist Proofreading", body: "Our team of expert proofreaders ensures your content is flawless, polished, and ready to impress your audience." },
+  { title: "Unlimited Revisions", body: "We're committed to getting it right. Enjoy as many revisions as necessary to meet your exact specifications—free of charge." },
+  { title: "Risk-Free Sampling", body: "Try before you buy. We offer a complimentary sample to demonstrate our expertise and fit for your project." },
+  { title: "Exclusive Bulk Discounts", body: "The more you order, the more you save. Benefit from our tiered discount system designed for long-term partnerships." },
+];
+---
+<section class="bg-[var(--surface)] py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-3xl mb-3">Unleash the Full Power of SEO with Content That Dominates</h2>
+      <p class="text-[var(--ink-soft)]">Get More Than Just Words—Experience the Power of Strategic SEO Content That Delivers Results.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map(f => (
+        <div class="bg-[var(--paper)] rounded-xl p-6 border" style="border-color: var(--line)">
+          <h3 class="font-bold mb-2">{f.title}</h3>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed">{f.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

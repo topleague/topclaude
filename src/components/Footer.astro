@@ -1,0 +1,30 @@
+---
+import { SITE, FOOTER_LINKS } from '@/site.config';
+const year = new Date().getFullYear();
+---
+<footer class="border-t mt-20" style="border-color: var(--line)">
+  <div class="max-w-6xl mx-auto px-6 py-14 grid sm:grid-cols-3 gap-10">
+    <div>
+      <img src="/assets/Reduced-Gap_TL_TLT-Banner_0b44faff_Trans-BG.svg" alt={SITE.name} class="h-8 w-auto mb-3" />
+      <p class="text-sm text-[var(--ink-soft)] mb-4">{SITE.tagline}</p>
+      <div class="flex gap-4">
+        {SITE.social.map(s => <a href={s.href} class="text-sm text-[var(--ink-soft)] hover:text-[var(--accent)]">{s.label}</a>)}
+      </div>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm uppercase tracking-wide mb-4">Services</h4>
+      <ul class="space-y-2">
+        {FOOTER_LINKS.services.map(l => <li><a href={l.href} class="text-sm text-[var(--ink-soft)] hover:text-[var(--accent)]">{l.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm uppercase tracking-wide mb-4">Blog Categories</h4>
+      <ul class="space-y-2">
+        {FOOTER_LINKS.blogCategories.map(l => <li><a href={l.href} class="text-sm text-[var(--ink-soft)] hover:text-[var(--accent)]">{l.label}</a></li>)}
+      </ul>
+    </div>
+  </div>
+  <div class="border-t py-6 text-center text-sm text-[var(--ink-soft)]" style="border-color: var(--line)">
+    © {year} {SITE.name}. All rights reserved.
+  </div>
+</footer>

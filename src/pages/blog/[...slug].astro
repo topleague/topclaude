@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { formatDate } from '@/utils/formatDate';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<BaseLayout title={post.data.title} description={post.data.excerpt}>
+  <article class="max-w-3xl mx-auto px-6 py-16">
+    <p class="text-sm text-[var(--ink-soft)] mb-3">{formatDate(post.data.date)} · {post.data.author}</p>
+    <h1 class="font-display text-4xl mb-8 leading-tight">{post.data.title}</h1>
+    {post.data.coverUrl && <img src={post.data.coverUrl} alt={post.data.title} class="w-full rounded-xl mb-8" />}
+    <div class="prose">
+      <Content />
+    </div>
+    {post.data.categories.length > 0 && (
+      <div class="mt-10 pt-6 border-t flex flex-wrap gap-2" style="border-color: var(--line)">
+        {post.data.categories.map((c: string) => (
+          <a href={`/category/${c.toLowerCase().replace(/\s+/g,'-')}/`} class="text-xs uppercase tracking-wide border rounded-full px-3 py-1 text-[var(--ink-soft)] hover:border-[var(--accent)] hover:text-[var(--accent)]" style="border-color: var(--line)">{c}</a>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>
