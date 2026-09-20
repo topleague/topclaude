@@ -1,0 +1,37 @@
+@font-face {
+	font-family: 'Mona Regular';
+	font-weight: 400;
+	src: url('/assets/MonaSansExpanded-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Mona Light';
+	font-weight: 300;
+	src: url('/assets/MonaSansExpanded-Light.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Mona Semi Bold';
+	font-weight: 600;
+	src: url('/assets/MonaSansExpanded-SemiBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Mona Extra Bold';
+	font-weight: 800;
+	src: url('/assets/MonaSansExpanded-ExtraBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Mona Black';
+	font-weight: 900;
+	src: url('/assets/MonaSansExpanded-Black.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Inter Extra Bold';
+	font-weight: 800;
+	font-display: swap;
+	src: url('/assets/Inter-ExtraBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Circular Book';
+	font-weight: 400;
+	font-display: swap;
+	src: url('/assets/CircularStd-Book.woff2') format('woff2');
+}
